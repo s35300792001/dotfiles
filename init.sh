@@ -1,11 +1,12 @@
 #/bin/bash
 
 if [ $(id -u) != 0 ]; then
-    echo "Warning: Please run as administrator"
+    echo "Warning: Please run with sudo"
     exit 0
 fi
 
-apt-get install -y zsh tmux vim > /dev/null
+apt-get install -y zsh git-core tmux vim
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 DOTFOLDER="$HOME/.dotfiles"
 DOTLIST=$(ls | egrep -v "(init.sh|README.md)")
@@ -21,4 +22,7 @@ do
     echo "Create symbolic link .$dotfile at $HOME linking to $BACKUPFOLDER/$dotfile"
     ln -s $(pwd)/$dotfile $HOME/.$dotfile
 done
+
+chsh -s `which zsh`
+shutdown -r 0
 
