@@ -29,10 +29,9 @@ endif
 Bundle 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-" Bundle "garbas/vim-snipmate"
-" Bundle 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
