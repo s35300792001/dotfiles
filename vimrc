@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+" filetype off                  " required
+filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -27,13 +28,13 @@ endif
 
 " let Vundle manage Vundle, required
 Bundle 'gmarik/vundle'
-
-Bundle 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle 'honza/vim-snippets'
+" Bundle "garbas/vim-snipmate"
+" Bundle 'honza/vim-snippets'
+Plugin 'altercation/vim-colors-solarized'
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
@@ -69,11 +70,14 @@ filetype plugin indent on     " required
 "
 nnoremap <silent> <F2> :NERDTreeToggle<CR> 
 
-syntax on
-"set nu
+syntax enable
+set nu
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
-
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
