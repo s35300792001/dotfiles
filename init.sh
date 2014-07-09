@@ -5,7 +5,9 @@ if [ $(id -u) != 0 ]; then
     exit 0
 fi
 
-apt-get install -y zsh git-core tmux vim
+apt-get install -y zsh git-core tmux vim python-software-properties build-essential cmake python-dev 
+add-apt-repository ppa:fcwu-tw/ppa; apt-get update; apt-get install vim
+cd ~/.vim/bundle/YouCompleteMe; ./install.sh --clang-completer
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 DOTFOLDER="$HOME/.dotfiles"
@@ -23,6 +25,6 @@ do
     ln -s $(pwd)/$dotfile $HOME/.$dotfile
 done
 
-chsh -s `which zsh`
+chsh -s $(which zsh)
 shutdown -r 0
 
