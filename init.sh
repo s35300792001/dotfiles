@@ -25,6 +25,6 @@ do
     ln -s $(pwd)/$dotfile $HOME/.$dotfile
 done
 
-chsh -s $(which zsh)
+chsh -s $(which zsh) aaron
 shutdown -r 0
 
